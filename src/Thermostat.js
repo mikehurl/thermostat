@@ -1,7 +1,14 @@
 'use strict';
 
-function Thermostat(){};
+function Thermostat(){
+  this.DEFAULT_TEMPERATURE = 20;
+  this.currentTemperature = this.DEFAULT_TEMPERATURE;
+};
 
 Thermostat.prototype.getTemperature = function(){
-  return 20
+  return this.currentTemperature;
+};
+
+Thermostat.prototype.increaseTemperature = function(){
+  this.currentTemperature += 1;
 };

@@ -27,11 +27,14 @@ Thermostat.prototype.isPowerSavingModeOn = function(){
   return this.PowerSavingMode;
 };
 
-Thermostat.prototype.changePowerSavingModeOn = function(){
-  this.PowerSavingMode = true;
+Thermostat.prototype.changePowerSavingMode = function(){
+  if(this.isPowerSavingModeOn){
+    this.PowerSavingMode = false
+    this.maximumTemperature = 32;
+  };
+  this.PowerSavingMode = true
 };
 
-Thermostat.prototype.changePowerSavingModeOff = function(){
-  this.PowerSavingMode = false;
-  this.maximumTemperature = 32;
+Thermostat.prototype.resetTemperature = function(){
+  this.currentTemperature = this.DEFAULT_TEMPERATURE;
 };

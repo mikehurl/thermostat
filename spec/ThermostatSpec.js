@@ -41,8 +41,13 @@ describe('Thermostat', function(){
   });
 
   it('sets non-Power saving maximum temperature at 32 degree', function(){
-    thermostat.changePowerSavingModeOff();
+    thermostat.changePowerSavingMode();
     expect(thermostat.maximumTemperature).toBe(32);
+  });
+
+  it('can reset the temperature to 20 degrees', function(){
+    thermostat.resetTemperature();
+    expect(thermostat.currentTemperature).toBe(20);
   });
 
 });

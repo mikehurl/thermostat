@@ -60,4 +60,10 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('reset function', function(){
+    it('can set the temperature to 20 degrees', function(){
+      thermostat.reset();
+      expect(thermostat.displayTemperature()).toEqual(20);
+    });
+  });
 });

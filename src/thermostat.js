@@ -32,3 +32,7 @@ var Thermostat = function() {
     this.mode = 'power hungry mode';
     this.maxTemperature = 32;
   };
+
+  Thermostat.prototype.reset = function(){
+    this.temperature = 20;
+  };

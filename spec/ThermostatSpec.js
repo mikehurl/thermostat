@@ -32,6 +32,12 @@ describe('Thermostat', function(){
     expect(function(){thermostat.decreaseTemperature()}).toThrowError("Error: it is too cold!");
   });
 
+  it('gives an error message if temperature is increased over maximum', function(){
+    for (var i = 1; i < 6; i++){
+      thermostat.increaseTemperature()};
+    expect(function(){thermostat.increaseTemperature()}).toThrowError("Error: it is too hot!");
+  });
+
   it('sets the power saving maximum temperature at 25 degrees', function(){
     expect(thermostat.maximumTemperature).toBe(25);
   });
@@ -52,7 +58,7 @@ describe('Thermostat', function(){
 
   it('can check the thermostats energy usage', function(){
     expect(thermostat.getUsage()).toEqual("Medium usage");
-    
+
     for (var i = 1; i < 6; i++){
       thermostat.increaseTemperature()};
     expect(thermostat.getUsage()).toEqual("High usage");

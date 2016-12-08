@@ -13,6 +13,9 @@ Thermostat.prototype.getTemperature = function(){
 };
 
 Thermostat.prototype.increaseTemperature = function(){
+  if (this.currentTemperature >= this.maximumTemperature){
+    throw new Error("Error: it is too hot!")
+  };
   this.currentTemperature += 1;
 };
 
@@ -40,13 +43,11 @@ Thermostat.prototype.resetTemperature = function(){
 };
 
 Thermostat.prototype.getUsage = function(){
-  if(this.currentTemperature < 18){
-    return "Low usage"
-  };
-  if(this.currentTemperature < 25){
-    return "Medium usage"
-  };
   if(this.currentTemperature >= 25){
     return "High usage"
   };
+  if(this.currentTemperature < 18){
+    return "Low usage"
+  };
+    return "Medium usage"
 };

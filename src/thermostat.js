@@ -8,7 +8,7 @@ var Thermostat = function() {
 
   Thermostat.prototype.up = function() {
     if (this.temperature === this.maxTemperature) {
-      throw 'Thermostat cannot go above 25 degrees in power saving mode';
+      throw 'Thermostat cannot go above ' + this.maxTemperature + ' degrees in ' + this.mode;
     } else {
       return (this.temperature += 1);
     }
@@ -23,5 +23,11 @@ var Thermostat = function() {
   };
 
   Thermostat.prototype.enablePowerSaving = function(){
+    this.mode = 'power saving mode';
     this.maxTemperature = 25;
-  }
+  };
+
+  Thermostat.prototype.disablePowerSaving = function(){
+    this.mode = 'power hungry mode';
+    this.maxTemperature = 32;
+  };

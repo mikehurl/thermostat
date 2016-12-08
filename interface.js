@@ -1,12 +1,22 @@
 $(document).ready(function(){
+
   var thermostat = new Thermostat();
+  function updateTemperature(){
+    $('#temperature').text(thermostat.currentTemperature);
+  };
+
   $('#temperature').text(thermostat.currentTemperature);
   $('#temperature-increase').on('click', function(){
     thermostat.increaseTemperature();
-    $('#temperature').text(thermostat.currentTemperature);
+    updateTemperature();
   })
   $('#temperature-decrease').click(function(){
     thermostat.decreaseTemperature();
-    $('#temperature').text(thermostat.currentTemperature);
+    updateTemperature();
   })
+  $('#temperature-reset').click(function(){
+    thermostat.resetTemperature();
+    updateTemperature();
+  })
+
 })

@@ -40,8 +40,9 @@ describe('Thermostat', function(){
     expect(thermostat.isPowerSavingModeOn()).toEqual(true);
   });
 
-  // it('sets non-Power saving maximum temperature at 32 degree', function(){
-  //
-  // });
+  it('sets non-Power saving maximum temperature at 32 degree', function(){
+    thermostat.changePowerSavingModeOff();
+    expect(thermostat.maximumTemperature).toBe(32);
+  });
 
 });

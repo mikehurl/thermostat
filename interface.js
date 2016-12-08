@@ -5,6 +5,14 @@ $(document).ready(function(){
     $('#temperature').text(thermostat.currentTemperature);
   };
 
+  function checkPowerSavingMode(){
+    if(thermostat.isPowerSavingModeOn === true){
+      $('#power-saving-status').text('on');
+    } else {
+      $('#power-saving-status').text('off');
+    }
+  };
+
   $('#temperature').text(thermostat.currentTemperature);
   $('#temperature-increase').on('click', function(){
     thermostat.increaseTemperature();
@@ -18,5 +26,23 @@ $(document).ready(function(){
     thermostat.resetTemperature();
     updateTemperature();
   })
+
+  $('#powersaving').click(function() {
+   thermostat.changePowerSavingMode();
+   checkPowerSavingMode();
+  })
+
+    //  if(thermostat.PowerSavingMode){
+    //    $('#power-saving-status').text('on')
+    //  } else {
+    //    $('#power-saving-status').text('off')
+    //  }
+
+ // $('#powersaving').click(function() {
+ //   thermostat.changePowerSavingMode();
+ //   $('#power-saving-status').text('off')
+ //   updateTemperature();
+ // })
+
 
 })

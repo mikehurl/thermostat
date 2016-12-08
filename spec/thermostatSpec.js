@@ -19,4 +19,11 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('down function', function () {
+    it('decreases the display temperature by 1 degree celsius', function(){
+      thermostat.down();
+      expect(thermostat.displayTemperature()).toEqual(19);
+    });
+  });
+
 });

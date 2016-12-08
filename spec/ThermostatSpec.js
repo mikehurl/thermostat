@@ -20,7 +20,7 @@ describe('Thermostat', function(){
   it('decreases the temperature by 1', function(){
       thermostat.decreaseTemperature();
       expect(thermostat.getTemperature()).toEqual(19);
-    });
+  });
 
   it('has a minimum temperature of 10 degrees', function(){
     expect(thermostat.MINIMUM_TEMPERATURE).toBe(10);
@@ -31,5 +31,17 @@ describe('Thermostat', function(){
       thermostat.decreaseTemperature()};
     expect(function(){thermostat.decreaseTemperature()}).toThrowError("Error: it is too cold!");
   });
+
+  it('sets the power saving maximum temperature at 25 degrees', function(){
+    expect(thermostat.maximumTemperature).toBe(25);
+  });
+
+  it('expect Power Saving Mode on by default', function(){
+    expect(thermostat.isPowerSavingModeOn()).toEqual(true);
+  });
+
+  // it('sets non-Power saving maximum temperature at 32 degree', function(){
+  //
+  // });
 
 });

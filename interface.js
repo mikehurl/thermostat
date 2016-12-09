@@ -6,7 +6,7 @@ $(document).ready(function(){
   };
 
   function checkPowerSavingMode(){
-    if(thermostat.isPowerSavingModeOn === true){
+    if(thermostat.isPowerSavingModeOn()){  //add() after isPowerSavingModeOn
       $('#power-saving-status').text('on');
     } else {
       $('#power-saving-status').text('off');
@@ -31,18 +31,5 @@ $(document).ready(function(){
    thermostat.changePowerSavingMode();
    checkPowerSavingMode();
   })
-
-    //  if(thermostat.PowerSavingMode){
-    //    $('#power-saving-status').text('on')
-    //  } else {
-    //    $('#power-saving-status').text('off')
-    //  }
-
- // $('#powersaving').click(function() {
- //   thermostat.changePowerSavingMode();
- //   $('#power-saving-status').text('off')
- //   updateTemperature();
- // })
-
 
 })

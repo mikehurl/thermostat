@@ -31,11 +31,13 @@ Thermostat.prototype.isPowerSavingModeOn = function(){
 };
 
 Thermostat.prototype.changePowerSavingMode = function(){
-  if(this.isPowerSavingModeOn){
+  if(this.isPowerSavingModeOn()){  //add() after isPowerSavingModeOn
     this.PowerSavingMode = false
     this.maximumTemperature = 32;
+  } else {                        //add else
+    this.PowerSavingMode = true
+    this.maximumTemperature = 25; //add this line
   };
-  this.PowerSavingMode = true
 };
 
 Thermostat.prototype.resetTemperature = function(){

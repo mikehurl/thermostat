@@ -9,3 +9,11 @@
 .medium-usage {
   color: black;
 }
+
+section {
+  font-family: "Comic Sans MS";
+}
+
+#temperature {
+  font-family: "Georgia";
+}

@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Thermostat</title>
     <link rel="stylesheet" type="text/css" href="stylesheets.css">
   </head>
+
   <body>
+
     <script src="jquery.js"></script>
     <script src="interface.js"></script>
+
     <section>
       <h1 id="temperature"></h1>
       <h1>Current outside temperature: <span id="outside-temperature"></span></h1>
+      <select id='#current-city'>
+        <option value='london'>London</option>
+        <option value='vaticancity'>Vatican City</option>
+        <option value='barcelona'>Barcelona</option>
+        <option value='pretoria'>Pretoria</option>
+      </select>
+
       <p>
         <button id="temperature-increase">+</button>
         <button id="temperature-decrease">-</button>
@@ -17,7 +28,9 @@
         power saving mode is <span id="power-saving-status">on</span>
         <button id="powersaving">Power Saving Mode</button>
       </p>
+
     </section>
+
     <script src="src/Thermostat.js"></script>
   </body>
 </html>

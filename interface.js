@@ -3,10 +3,17 @@ $(document).ready(function(){
   var thermostat = new Thermostat();
   function updateTemperature(){
     $('#temperature').text(thermostat.currentTemperature);
+      if (thermostat.currentTemperature >= 25) {
+          $('#temperature').css('color', 'red')
+      } else if (thermostat.currentTemperature < 18){
+          $('#temperature').css('color', 'green')
+      } else {
+          $('#temperature').css('color', 'black')
+      }
   };
 
   function checkPowerSavingMode(){
-    if(thermostat.isPowerSavingModeOn()){  //add() after isPowerSavingModeOn
+    if(thermostat.isPowerSavingModeOn()){
       $('#power-saving-status').text('on');
     } else {
       $('#power-saving-status').text('off');
@@ -32,4 +39,4 @@ $(document).ready(function(){
    checkPowerSavingMode();
   })
 
-})
+});
